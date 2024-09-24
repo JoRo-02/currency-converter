@@ -5,6 +5,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -12,6 +13,8 @@ public class Main {
         String currencyToConvert = "";
         String targetCurrency;
         double quantityToExchange;
+        HistoryManager historyManager = new HistoryManager();
+
         System.out.println("Welcome");
         System.out.println();
         System.out.println("*************************************");
@@ -39,11 +42,15 @@ public class Main {
                 System.out.println(menu);
             targetCurrency = input.nextLine();
 
+            if (targetCurrency.equalsIgnoreCase("CLOSE")){
+                break;
+            }
+
             System.out.println("How much would you like to convert?");
             quantityToExchange = input.nextDouble();
 
 
-            String apiKey = "";
+            String apiKey = "Your API KEY :)";
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create("https://v6.exchangerate-api.com/v6/" + apiKey
@@ -58,6 +65,14 @@ public class Main {
             CurrencyRecord currency = gson.fromJson(response.body(), CurrencyRecord.class);
             Conversor conversor = new Conversor(currency);
             conversor.result(quantityToExchange);
+            System.out.println();
+            System.out.println();
+            historyManager.HistoryAddElement(conversor);
+            System.out.println("Here is your transaction history: ");
+            historyManager.HistoryShowElements();
+            System.out.println();
+
+
         }
     }
 
