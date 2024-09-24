@@ -16,8 +16,14 @@
 
 <h2>Installation:</h2>
 <ol>
-  <li>Clone this repo: <br>
-   git clone https://github.com/JoRo-02/currency-converter.git</li>
+  <li>
+  Clone this repo: <br>
+    
+  ```bash
+  git clone https://github.com/JoRo-02/currency-converter.git
+  ```
+  </li>
+
   <li>Import into your Java IDE or compile from the terminal.</li>
 </ol>
 
