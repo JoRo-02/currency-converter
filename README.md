@@ -2,8 +2,9 @@
 <p>A simple Java-based currency converter that fetches real-time exchange rates using an <a href = "https://www.exchangerate-api.com/" target= "_blank">API</a> and converts between different currencies.</p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/13c630bc-9872-4178-a0e9-730eebe36233"/>
+  <img src=""/>
 </p>
+![Uploading newUserGuide.gif…]()
 
 
 
